@@ -1,3 +1,57 @@
-.list-group-item {
-  line-height: 2.5;
+
+html {
+  background-color: black;
+  color: white;
+  font-family: Arial
+}
+
+#row1 {
+  background-color: black;
+  width: 100%;
+  max-width: 100rem;
+}
+
+.button {
+  color: white;
+  background-color: black;
+  border: 2px solid white;
+  border-radius: 5px;
+  margin-top: 15px;
+  margin-left: 25px;
+}
+
+.button:hover {
+  background-color: black;
+}
+
+.button:focus {
+  background-color: black;
+}
+
+#row2 {
+  background-color: black;
+  max-width: 100rem;
+}
+
+#row3 {
+  background-color: black;
+  max-width: 100rem;
+}
+
+label {
+  color: white;
+  width: 20%;
+  margin: 0;
+}
+
+#middle-label {
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.empty-column {
+  display: none;
 }
