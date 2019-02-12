@@ -3,5 +3,12 @@ module.exports = function(sequelize, DataTypes) {
     userName: DataTypes.STRING,
     password: DataTypes.STRING
   });
-  return User;
+
+User.associate = function(models) {
+  User.hasMany(models.Search, {
+    onDelete: "cascade"
+  });
+};
+
+return User;
 };
