@@ -1,7 +1,7 @@
 var db = require("../models");
 
 module.exports = function (app) {
-  // Get all users
+  // Get all search terms
   app.get("/api/search", function (req, res) {
     db.Search.findAll({}).then(function (dbSearch) {
       res.json(dbSearch);
@@ -30,7 +30,7 @@ module.exports = function (app) {
     });
   });
 
-  // Delete an example by id
+  // Delete a search by id
   app.delete("/api/search/:id", function (req, res) {
     db.Search.destroy({ where: { id: req.params.id } }).then(function (dbSearch) {
       res.json(dbSearch);
