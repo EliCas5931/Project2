@@ -3,8 +3,8 @@ var db = require("../models");
 module.exports = function (app) {
   // Get all users
   app.get("/api/search", function (req, res) {
-    db.Search.findAll({}).then(function (Project2) {
-      res.json(Project2);
+    db.Search.findAll({}).then(function (dbSearch) {
+      res.json(dbSearch);
     });
   });
 
@@ -31,9 +31,9 @@ module.exports = function (app) {
   });
 
   // Delete an example by id
-  app.delete("/api/examples/:id", function (req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function (dbExample) {
-      res.json(dbExample);
+  app.delete("/api/search/:id", function (req, res) {
+    db.Search.destroy({ where: { id: req.params.id } }).then(function (dbSearch) {
+      res.json(dbSearch);
     });
   });
 };
