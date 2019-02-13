@@ -2,13 +2,6 @@ var db = require("../models");
 var passport = require("../config/passport");
 
 module.exports = function (app) {
-  // Get all search terms
-  app.get("/api/search", function (req, res) {
-    db.Search.findAll({}).then(function (dbSearch) {
-      res.json(dbSearch);
-    });
-  });
-
   // Get route for returning a specific search term
   app.get("/api/search/:searchTerm", function (req, res) {
     db.Search.findAll({
