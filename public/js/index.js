@@ -1,8 +1,8 @@
 // Get references to page elements
 var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
-var $loginBtn = $(".buttonprimary");
-var $exampleList = $("#example-list");
+var $loginBtn = $("#");
+var $signUpBtn = $("#example-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -16,29 +16,29 @@ var API = {
       data: JSON.stringify(search)
     });
   },
-  getExamples: function() {
+  getSearch: function() {
     return $.ajax({
-      url: "api/examples",
+      url: "api/search",
       type: "GET"
     });
   },
   deleteExample: function(id) {
     return $.ajax({
-      url: "api/examples/" + id,
+      url: "api/search/" + id,
       type: "DELETE"
     });
   }
 };
 
 // refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
+var refreshResults = function() {
+  API.getSearch().then(function(data) {
+    var $search = data.map(function(example) {
       var $a = $("<a>")
         .text(example.text)
         .attr("href", "/example/" + example.id);
 
-      var $li = $("<li>")
+      var $li = $("<li>") 
         .attr({
           class: "list-group-item",
           "data-id": example.id
