@@ -21,7 +21,7 @@ html {
 }
 
 .button:hover {
-  background-color: black;
+  background-color: rgba(121, 121, 121, 0.596);
 }
 
 .button:focus {
@@ -68,7 +68,11 @@ label {
   margin: 0;
   display: inline-block;
   text-align: center;
-  line-height: 50%;
+  line-height: 25%;
+}
+
+#submit-button:hover {
+  background-color: rgba(121, 121, 121, 0.596);
 }
 
 /* SEARCH PAGE */
@@ -106,6 +110,11 @@ label {
 }
 
 #search-row-3 {
+  background-color: black;
+  max-width: 100%;
+}
+
+#search-row-4 {
   background-color: black;
   max-width: 100%;
 }
