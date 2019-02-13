@@ -8,6 +8,9 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       defaultValue: "guest"
     }
+  },
+  {
+    timestamps: false
   });
 
 User.associate = function(models) {

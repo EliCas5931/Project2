@@ -11,4 +11,11 @@ module.exports = function(app) {
   app.get("*", function(req, res) {
     res.render("404");
   });
+
+  // Route for search results page
+  app.get("/search", function(req, res) {
+    res.render("results", {layout: "second"});
+  });
+
+  // Route for signup form
 };
