@@ -2,7 +2,7 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Load index page
-  app.get("/", function(req, res){
+  app.get("/", function(req, res) {
     res.render("home");
   });
 
@@ -17,9 +17,10 @@ module.exports = function(app) {
     res.render("signup");
   });
 
+
   // Route for search results page
   app.get("/search", function(req, res) {
-    res.render("results", {layout: "second"});
+    res.render("search");
   });
 
   // Render 404 page for any unmatched routes
