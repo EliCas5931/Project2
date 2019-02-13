@@ -8,12 +8,12 @@ module.exports = function(app) {
 
 
   // Load login page
-  app.get("/login.handlebars", function(req, res) {
+  app.get("/login", function(req, res) {
     res.render("login");
   });
 
   // Load signup page
-  app.get("/signup.handlebars", function(req, res) {
+  app.get("/signup", function(req, res) {
     res.render("signup");
   });
 
