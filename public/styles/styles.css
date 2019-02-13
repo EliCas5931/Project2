@@ -95,3 +95,7 @@ label {
   background-color: black;
   max-width: 100%;
 }
+
+.buttonprimary {
+  color: #C71585;
+}
