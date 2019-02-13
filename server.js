@@ -6,11 +6,18 @@ var db = require("./models");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
+var session = require("express-session");
+var passport = require("./config/passport");
+var connect = require("connect");
+var appTwo = connect();
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
+appTwo.use(session({ secret: 'keyboard cat' }));
+appTwo.use(passport.initialize());
+appTwo.use(passport.session());
 
 // Handlebars
 app.engine(

@@ -1,19 +1,19 @@
 // Get references to page elements
 var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
+var $loginBtn = $(".buttonprimary");
 var $exampleList = $("#example-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
+  search: function(search) {
     return $.ajax({
-      headers: {
+      search: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
+      url: "api/search",
+      data: JSON.stringify(search)
     });
   },
   getExamples: function() {
