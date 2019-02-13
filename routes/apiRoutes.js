@@ -25,13 +25,13 @@ module.exports = function (app) {
    res.send(req.user);
  });
 
-  // app.post('/login',
-  //   passport.authenticate('local', {
-  //     successRedirect: '/',
-  //     failureRedirect: '/login',
-  //     failureFlash: true
-  //   })
-  // );
+  app.post('/login',
+    passport.authenticate('local', {
+      successRedirect: '/',
+      failureRedirect: '/login',
+      failureFlash: true
+    })
+  );
 
   // POST route to create search results
   app.post("/api/search", function (req, res) {
