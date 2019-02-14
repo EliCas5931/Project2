@@ -17,10 +17,11 @@ router.get("/signup", function (req, res) {
   res.render("signup");
 });
 
-// Route for search results page
-router.get("/search", function (req, res) {
-  res.render("search");
-});
+  // Route for search results page
+  router.get("/search", function(req, res) {
+    //throwing in api search
+    res.render("search");
+  });
 
 // Render 404 page for any unmatched routes
 router.get("*", function (req, res) {
