@@ -1,20 +1,45 @@
 var router = require("express").Router();
-var passport = require("../config/passport");
+var db = require("../models");
 
-router.post('/login',
-passport.authenticate('local'),
-function(req, res) {
-  // If this function gets called, authentication was successful.
-  // `req.user` contains the authenticated user.
-  console.log(req.user);
-  res.send(req.user);
+router.get("/login", function(req, res) {
+  res.render("/");
 });
 
- router.post('/login',
-   passport.authenticate('local', {
-     successRedirect: '/',
-     failureRedirect: '/login',
-     failureFlash: true
-   })
- );
+router.post("/login", function(req, res) {
+  // Look up user via userName
+  db.User.findOne({
+    where: {
+      userName: req.body.userName
+    }
+  }).then(function(user) {
+    // Compare password
+    if (req.body.password !== user.password) {
+      return res.render("auth/login", {
+        email: req.body.email || "",
+        error: "Invalid email/password combo, please try again."
+      });
+    }
+
+    res.redirect("/");
+  });
+});
+
+router.get("/signup", function(req, res) {
+  res.render("auth/signup");
+});
+
+router.post("/signup", function(req, res) {
+  var newUser = {
+    email: req.body.,
+    password: req.body.password
+  };
+  db.User.create(newUser)
+    .then(function(createdUser) {
+      res.redirect("/auth/login");
+    })
+    .catch(function(err) {
+      console.error(err);
+    });
+});
+
 module.exports = router;
