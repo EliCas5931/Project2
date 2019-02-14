@@ -1,5 +1,5 @@
 var router = require("express").Router();
-var db = require("../models");
+var db = require("../../models");
 
 router.get("/api/search/:searchTerm", function (req, res) {
     db.Search.findAll({
@@ -13,6 +13,9 @@ router.get("/api/search/:searchTerm", function (req, res) {
   });
   // POST route to create search results
   router.post("/api/search", function (req, res) {
+    // iMDB AJAX goes here
+    // once user is on search page and search term is entered, response title and user is saved into DB (search table)
+
     db.Search.create({
       searchTerm: req.body.searchTerm
     })
