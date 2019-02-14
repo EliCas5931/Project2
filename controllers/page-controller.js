@@ -16,6 +16,7 @@ router.get("/", function(req, res) {
 
   // Route for search results page
   router.get("/search", function(req, res) {
+    //throwing in api search
     res.render("search");
   });
 
