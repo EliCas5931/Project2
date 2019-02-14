@@ -30,7 +30,7 @@ router.get("/signup", function(req, res) {
 
 router.post("/signup", function(req, res) {
   var newUser = {
-    email: req.body.,
+    userName: req.body.userName,
     password: req.body.password
   };
   db.User.create(newUser)

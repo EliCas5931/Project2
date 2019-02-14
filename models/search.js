@@ -1,8 +1,16 @@
 module.exports = function(sequelize, DataTypes) {
     var Search = sequelize.define("Search", {
-      searchTerm: DataTypes.STRING
+      searchTerm: {
+        type: DataTypes.STRING
+      }
       
+    },
+    {
+    timestamps: false
     });
+  
+        
+        
     
     Search.associate = function(models) {
         Search.belongsTo(models.User, {
