@@ -4,22 +4,37 @@ $(document).ready(function() {
     var userName = $("#username");
     var email = $("#email");
     var password = $("#password");
-    
-    $(signupForm).on("submit", handleFormSubmit);
+
+    $("#signSubmit").on("click", handleFormSubmit);
 
     function handleFormSubmit(event) {
         event.preventDefault();
+        console.log("submit button was pressed");
         // query User table to check if username already exists
-
-        
-        if (!userName.val().trim() || !email.val().trim() || !password.val().trim())
-    }
-})
+    // Wont submit the post if we are missing a body, title, or author
+    //  if (!userName.val().trim() || !email.val().trim() || !password.val().trim()) {
+    //      return;
+    // }
+    var newUser = {
+        name: userName
+          .val()
+          .trim(),
+        password: password
+          .val()
+          .trim()
+      };
+      submitUser(newUser);
+}
 
 // validate data (meaning if user didn't try to create a username that doesn't already exist)
 
     // if not valid, alert user.
 
 // if data is valid, save to user's table 
-
-// 
+  // Submits a new user/password and brings user to home page upon completion
+  function submitUser(user) {
+    $.post("/api/users", user, function() {
+      window.location.href = "/";
+    });
+  }
+}); 
