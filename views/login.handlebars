@@ -1,37 +1,34 @@
-    <div class="row" id="row1">
-        <div class="columns small-10 medium-10 large-10"></div>
-        <div class="columns small-2 medium-2 large-2"></div>
+<div class="row" id="login-row-1">
+    <div class="columns small-12 medium-12 large-12">&nbsp;</div>
+</div>
+
+<div class="row" id="row2">
+    <div class=" columns small-2 medium-4 large-4" class="empty-column">&nbsp;</div>
+    <div class="columns small-8 medium-4 large-4">
+        <img src="/images/screenguide.jpg">
     </div>
-    <br><br>
+    <div class="columns small-2 medium-4 large-4" class="empty-column"></div>
+</div>
 
-    <form>
-        <div class="row" id="row1">
-            <div class="columns small-2 medium-4 large-4" class="empty-column">&nbsp;</div>
 
-            <div class="columns small-8 medium-4 large-4">
-                <label>Username <input type="text" placeholder="Create Username">
-                </label>
-            </div>
-
-            <div class="columns small-2 medium-4 large-4" class="empty-column"></div>
-        </div>
-
-        <br>
-
-        <div class="row" id="row3">
-            <div class="columns small-2 medium-4 large-4" class="empty-column">&nbsp;</div>
-
-            <div class="columns small-8 medium-4 large-4">
-                <label>Password
-                    <input type="password" aria-describedby="passwordHelpText">
-                </label>
-                <p class="help-text" id="passwordHelpText">Your password must have at least 6 characters, a number, and
-                    a special character.</p>
-                <a class="buttonprimary" id="loginSubmit" href="#">Submit</a>
-            </div>
-
-            <div class="columns small-2 medium-4 large-4" class="empty-column"></div>
-        </div>
-
-    </form>
-
+<div class="row" id="login-row-3">
+    <div class="columns small-2 medium-4 large-4" class="empty-column">&nbsp;</div>
+    <div class="columns small-8 medium-4 large-4">
+        <form>
+            <label>USERNAME: <input class="loginlabel" type="text" placeholder="Your Username"></label>
+        </form>
+    </div>
+    <div class="columns small-2 medium-4 large-4" class="empty-column"></div>
+</div>
+<div class="row" id="login-row-4">
+    <div class="columns small-2 medium-4 large-4" class="empty-column">&nbsp;</div>
+    <div class="columns small-8 medium-4 large-4">
+        <form>
+            <label>PASSWORD: <input class="loginlabel" type="password" placeholder="Your Password"></label>
+        </form>
+        <p class="help-text" id="passwordHelpText">Your password must have at least 6 characters, a number, and
+            a special character.</p>
+        <button class="button" href="#" id="submit-button">SUBMIT</button>
+    </div>
+    <div class="columns small-2 medium-4 large-4" class="empty-column"></div>
+</div>
