@@ -1,12 +1,13 @@
 var router = require("express").Router();
 var db = require("../../models");
 
-router.get("/", function(req, res) {
+router.get("/api/users", function(req, res) {
     var newUser = {
-        userName: req.body.userName
+        userName: req.body.userName,
+        password: req.body.password
     };
 
-    db.Task.create(newUser)
+    db.User.create(newUser)
     .then(function(createdUser) {
         res.json(createdUser);
     })
@@ -15,5 +16,12 @@ router.get("/", function(req, res) {
         res.json(false);
     });
 });
+  // POST route for saving a new post
+  router.post("/api/users", function(req, res) {
+      console.log("hi");
+    db.User.create(req.body).then(function(dbUser) {
+      res.json(dbUser);
+    });
+  });
 
 module.exports = router
