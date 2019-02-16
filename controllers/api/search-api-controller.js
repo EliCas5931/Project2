@@ -17,11 +17,7 @@ router.get("/api/search/:searchTerm", function (req, res) {
   router.post("/api/search", function (req, res) {
     // iMDB AJAX goes here
     // once user is on search page and search term is entered, response title and user is saved into DB (search table)
-<<<<<<< HEAD
-    // API.#jquerynamegoeshere.
-=======
-    //API.#jquerynamegoeshere.
->>>>>>> 201bce94d60ed44629148cf6455cf2cc991b2893
+
     db.Search.create({
       searchTerm: req.body.searchTerm
     })
