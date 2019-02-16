@@ -3,7 +3,7 @@ $(document).ready(function() {
     var signupForm = $("#signupForm");
     var userName = $("#username");
     var email = $("#email");
-    var password = $("#password");
+    var password = $("#newPass");
 
     $("#signSubmit").on("click", handleFormSubmit);
 
@@ -23,6 +23,7 @@ $(document).ready(function() {
           .val()
           .trim()
       };
+      console.log(newUser);
       submitUser(newUser);
 }
 
