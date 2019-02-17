@@ -35,7 +35,7 @@ $(document).ready(function () {
     // Submits a new user/password and brings user to home page upon completion
     function submitUser(user) {
         $.post("/api/users", user, function () {
-            window.location.href = "/";
+            // window.location.href = "/";
         });
     }
 }); 
