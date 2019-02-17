@@ -4,7 +4,7 @@ var db = require("../../models");
 
 router.get("/api/users", function (req, res,) {
   var newUser = {
-    userName: req.body.userName,
+    userName: req.body.name,
     password: req.body.password
   };
 
@@ -20,8 +20,8 @@ router.get("/api/users", function (req, res,) {
 });
 // POST route for saving a new post
 router.post("/api/users", function (req, res) {
-  console.log("hi");
-  db.User.create(req.body).then(function (dbUser) {
+  console.log(req.body);
+  db.User.create({userName: req.body.name, password: req.body.password}).then(function (dbUser) {
     res.json(dbUser);
   });
 });
