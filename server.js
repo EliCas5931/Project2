@@ -8,10 +8,10 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 var session = require("express-session");
 var connect = require("connect");
-// var app = connect();
+
 
 // Middleware
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 

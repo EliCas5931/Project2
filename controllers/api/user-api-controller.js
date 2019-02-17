@@ -1,7 +1,8 @@
+// var router = require("express").Router();
 var router = require("express").Router();
 var db = require("../../models");
 
-router.get("/api/users", function (req, res) {
+router.get("/api/users", function (req, res,) {
   var newUser = {
     userName: req.body.userName,
     password: req.body.password
@@ -25,4 +26,4 @@ router.post("/api/users", function (req, res) {
   });
 });
 
-module.exports = router
+module.exports = router;
